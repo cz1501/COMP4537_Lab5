@@ -6,6 +6,7 @@ require('dotenv').config();
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
+const PORT = process.env.PORT || 3000
 
 const db = mysql.createConnection({
     host: dbHost,
@@ -128,6 +129,6 @@ http
       res.end("Not found.");
     }
   })
-  .listen(3000, () => {
+  .listen(PORT, () => {
     console.log("Server running on http://localhost:3000");
   });
