@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cz1501/COMP4537_Lab5#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.3"
   }
 }

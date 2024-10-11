@@ -1,5 +1,5 @@
 const http = require("http");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const url = require("url");
 require('dotenv').config();
 
@@ -12,6 +12,8 @@ const db = mysql.createConnection({
     user: dbUser,
     password: dbPass, // Change this to your MySQL password
     // Do not specify the database here
+    port: 22884, // Specify the custom port
+    connectTimeout: 20000
 });
   
 // Create the database and the table if they don't exist
