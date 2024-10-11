@@ -50,6 +50,18 @@ http
     const parsedUrl = url.parse(req.url, true);
     const path = parsedUrl.pathname;
 
+    // Add CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Handle preflight OPTIONS request
+    if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+    }
+
     if (req.method === "POST" && path === "/insert") {
       // Insert dummy patient data into the table
       let body = "";
