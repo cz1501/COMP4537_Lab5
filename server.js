@@ -10,9 +10,8 @@ const dbPass = process.env.DB_PASS;
 const db = mysql.createConnection({
     host: dbHost,
     user: dbUser,
-    password: dbPass, // Change this to your MySQL password
-    // Do not specify the database here
-    port: 22884, // Specify the custom port
+    password: dbPass,
+    port: 22884, 
     connectTimeout: 20000
 });
   
